@@ -63,17 +63,17 @@ class CoffeeMachine:
         self.customer += str(input("enter the customer name:\n"))
         self.choice = input("What do you want to buy?\n 1 - espresso\n 2 - latte\n 3 - cappuccino\n back - to main menu:\n")
         if self.choice == '1':
-            self.reduced = [250, 0, 16, 1, 4]  # water, milk, coffee beans, cups, money
+            self.reduced = [250, 0, 16, 1]  # water, milk, coffee beans, cups
             if self.available_check():  # checks if supplies are available
                 self.deduct_supplies()  # if it is, then it deducts
 
         elif self.choice == '2':
-            self.reduced = [350, 75, 20, 1, 7]
+            self.reduced = [350, 75, 20, 1]
             if self.available_check():
                 self.deduct_supplies()
 
         elif self.choice == "3":
-            self.reduced = [200, 100, 12, 1, 6]
+            self.reduced = [200, 100, 12, 1]
             if self.available_check():
                 self.deduct_supplies()
 
@@ -84,11 +84,10 @@ class CoffeeMachine:
 
     def fill(self):  # for adding supplies to the machine
         self.customer += str(input("enter the customer name:\n"))
-        self.water += int(input("Write how many ml of water do you want to add:\n"))
-        self.milk += int(input("Write how many ml of milk do you want to add:\n"))
-        self.coffee_beans += int(input("Write how many grams of coffee beans do you want to add:\n"))
+        self.water += int(input("Write how much water do you want to add:\n"))
+        self.milk += int(input("Write how much milk do you want to add:\n"))
+        self.coffee_beans += int(input("Write how many coffee beans do you want to add:\n"))
         self.cups += int(input("Write how many disposable cups of coffee do you want to add:\n"))
-
         self.return_to_menu()
 
 
